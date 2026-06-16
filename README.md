@@ -21,7 +21,8 @@
 
 AI Attribution: AI was used to generate the .gitignore file and for formatting parts of this README file.
 
-### Sample Data
+### Sample Data (for reference)
+The db.sqlite3 database should already be pre-populated with the sample data.
 * **Categories:** `Conduit & Raceways`, `Fittings & Bodies`, `Wire & Cable`, `Boxes & Enclosures`, `Fasteners & Hardware`, `Circuit Breakers & Control`, `Tools & Accessories`
 * **Tags:** `18AWG`, `4"`, `1"`, `3/4"`, `1/2"`, `Bolt-on`, `Threaded`, `Compression`, `Copper (CU)`, `PVC`, `Plastic`, `Aluminum`, `Steel`
 * **Products**:
