@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Catalog</title>
+</head>
+
+<body>
+    <div class="search-bar">
+        <h3>Search Products:</h3>
+        <form method="GET">
+            <p>
+                <input 
+                    type="text" 
+                    id="searchbar" 
+                    name="q" 
+                    placeholder="Search Products" 
+                    value="{{ search_query|default:"" }}"
+                >
+            </p>
+
+            <p>
+                <label for="categories">Category:</label>
+                <select id="categories" name="category">
+                    <option value="">All Categories</option>
+                    {% for category in categories %}
+                        <option 
+                            value="{{ category.id }}"
+                            {% if category.id == selected_category %} selected {% endif %}
+                        >
+                            {{ category.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </p>
+            
+            <p>
+                Tags:
+                {% for tag in tags %}
+                    <input
+                        type="checkbox" 
+                        id="tag-{{ tag.id }}" 
+                        name="tag" 
+                        value="{{ tag.id }}"
+                        {% if tag.id in selected_tags %} checked {% endif %}
+                    >
+                    <label for="tag-{{ tag.id }}">{{ tag.name }}</label>
+                {% endfor %}
+            </p>
+
+            <button type="submit">Search</button>
+            <a href="{% url 'product_catalog' %}">Clear Filters</a>
+        </form>
+    </div>
+
+    <div id="search-results">
+        <h3>Products:</h3>
+        <ul>
+            {% for product in products %}
+                <li>{{ product.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

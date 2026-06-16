@@ -1,0 +1,17 @@
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
+*.sqlite3
+
+# Environments
+.venv/
+venv/
+env/
+
+# IDE / Operating System files
+.vscode/
+.idea/
+.DS_Store
